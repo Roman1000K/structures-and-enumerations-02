@@ -5,8 +5,7 @@ struct account
 {
     int accNumber;
     std::string name;
-    float cash;
-    
+    float cash;    
 };
 
 int main()
@@ -14,20 +13,17 @@ int main()
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
 
+    account account1;
+
     std::cout << "Введите номер счета: ";
-    int accNumber;
-    std::cin >> accNumber;
+    std::cin >> account1.accNumber;
     std::cout << "Введите имя владельца: ";
-    std::string name;
-    std::cin >> name;
+    std::cin >> account1.name;
     std::cout << "Введите баланс: ";
-    float cash;
-    std::cin >> cash;
+    std::cin >> account1.cash;
     std::cout << "Введите новый баланс: ";
     float cash1;
     std::cin >> cash1;
-
-    account account1 = { accNumber, name, cash };
 
     account1.cash = cash1;
 
