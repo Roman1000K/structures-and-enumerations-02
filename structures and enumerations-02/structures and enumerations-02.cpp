@@ -1,33 +1,45 @@
 ﻿#include <iostream>
 #include <Windows.h> 
 
-struct account
+struct Account
 {
     int accNumber;
     std::string name;
     float cash;    
 };
+void newBalance(Account& account, float newCash) {
+    account.cash = newCash;
+}
 
 int main()
 {
     SetConsoleCP(1251);
     SetConsoleOutputCP(1251);
 
-    account account1;
+    Account account;
 
     std::cout << "Введите номер счета: ";
-    std::cin >> account1.accNumber;
+    std::cin >> account.accNumber;
+
     std::cout << "Введите имя владельца: ";
-    std::cin >> account1.name;
+    std::cin >> account.name;
+
     std::cout << "Введите баланс: ";
-    std::cin >> account1.cash;
+    std::cin >> account.cash;
+
     std::cout << "Введите новый баланс: ";
     float cash1;
     std::cin >> cash1;
+    newBalance(account, cash1);    
 
-    account1.cash = cash1;
+    std::cout << "Ваш счет: " << account.name << ", " << account.accNumber << ", "
+        << account.cash;
 
-    std::cout << "Ваш счет: " << account1.name << ", " << account1.accNumber << ", "
-        << account1.cash;
+    return 0;
     }
+
+
+
+
+
 
